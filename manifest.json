@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "QuickAccCreator",
+  "version": "1.0",
+  "description": "The add-on was developed by developer Abdul Rahman, and the rights to the program belong to Abdul Rahman Saifi and Ahmed Dawoud",
+  "permissions": ["tabs","https://accounts.google.com/signup/v2/*"],
+  "action": {
+    "default_popup": "./src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "./src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://accounts.google.com/signup/v2/*"],
+      "js": ["./src/contentScript.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
